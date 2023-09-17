@@ -10,3 +10,8 @@ test('should navigate to the about page', async ({ page }) => {
   // The new page should contain an h1 with "About Page"
   await expect(page.locator('h1')).toContainText('About Page')
 })
+
+test('test for visual comparisons', async ({ page }) => {
+  await page.goto('http://localhost:3000/about');
+  await expect(page).toHaveScreenshot();
+});
